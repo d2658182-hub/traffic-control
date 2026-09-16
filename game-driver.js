@@ -29,7 +29,7 @@
     }
   }
 
-  var GameSnacks = {
+  var DriverAPI = {
     audio: {
       subscribe: function (fn) {
         if (typeof fn === 'function') audioListeners.push(fn);
@@ -75,10 +75,8 @@
     },
   };
 
-  // Publish the driver under the names the game checks.
-  // (Game code refers to `GameDriver`; keep `GameSnacks` as an alias.)
-  window.GameDriver = GameSnacks;
-  window.GameSnacks = GameSnacks;
+  // Publish the driver under the name the game checks.
+  window.GameDriver = DriverAPI;
 
   // ---------- lifecycle bridging to document visibility ----------
   var driver = {
